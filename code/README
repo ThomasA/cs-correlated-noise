@@ -1,0 +1,23 @@
+The functions here require the following data and toolboxes from other
+sources:
+
+Phase transition data related to [1] available here:
+http://ecos.maths.ed.ac.uk/polytopes.shtml
+http://ecos.maths.ed.ac.uk/data/polytope.mat
+
+The main simulation scripts require the toolbox "SPGL1: A solver for
+large-scale sparse reconstruction" [2], available here:
+http://www.cs.ubc.ca/labs/scl/spgl1
+
+The function bpdq_gauss_unif.m is kindly provided by Prof. Laurent
+Jacques at UC Louvain, Belgium. Please do not re-distribute this
+function without explicit consent from Prof. Laurent Jacques
+(laurent.jacques@uclouvain.be).
+
+========================================================================
+[1] Donoho, D. & Tanner, J., "Precise Undersampling Theorems",
+Proceedings of the IEEE, 2010, vol. 98, no. 6, pp. 913-924.
+
+[2] E. van den Berg and M. P. Friedlander, "Probing the Pareto
+frontier for basis pursuit solutions", SIAM Journal on Scientific
+Computing, 2008, vol. 31, no. 2, pp. 890-912.
