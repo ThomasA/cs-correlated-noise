@@ -1,4 +1,4 @@
-function test_noise_ord_vs_scale_opt(quantRate)
+function saveFileName = test_noise_ord_vs_scale_opt(quantRate)
 %TEST_LLOYDMAX_ORD_VS_SCALE_OPT simulates recon. from quant. measurements
 % It is intended to test whether, and possibly how much, it can improve
 % compressed sensing reconstruction from (Lloyd-Max) quantized measurements
@@ -6,6 +6,12 @@ function test_noise_ord_vs_scale_opt(quantRate)
 % reconstruction. This function attempts to find the optimal scaling
 % factors and regularization parameters for the simulated methods as
 % described in the paper, Section IV-C.
+%
+% Input:
+%   quantRate     Equivalent quantizer bit rate (bits/measurement).
+%
+% Output:
+%   saveFileName  The name of the file the results are saved to.
 %
 %   Code implemented by: Thomas Arildsen
 %   Contact e−mail: sparsig−toolbox@es.aau.dk
@@ -30,7 +36,7 @@ function test_noise_ord_vs_scale_opt(quantRate)
 %% Revision control data - remove segment if you are not using SVN
 stStr = evalc('system(sprintf(''svn st %s.m'',mfilename))');
 svnMod = regexp(stStr,'^M','match');
-revStr = '$Revision: 684 $';
+revStr = '$Revision: 685 $';
 svnRevision = regexp(revStr,'-?\d+','match');
 svnStatus = [cell2mat(svnRevision) cell2mat(svnMod)];
 clear stStr svnMod revStr svnRevision;

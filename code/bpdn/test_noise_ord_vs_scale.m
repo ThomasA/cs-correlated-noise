@@ -1,9 +1,15 @@
-function test_noise_ord_vs_scale(quantRate)
+function saveFileName = test_noise_ord_vs_scale(quantRate)
 %TEST_NOISE_ORD_VS_SCALE simulates recon. from quantized measurements
 % It is intended to test whether, and possibly how much, it can improve
 % compressed sensing reconstruction from measurements correlated with the
 % measurement noise to incorporate a linear gain-plus-additive-noise
 % correlation model in the reconstruction.
+%
+% Input:
+%   quantRate     Equivalent quantizer bit rate (bits/measurement).
+%
+% Output:
+%   saveFileName  The name of the file the results are saved to.
 %
 %   Code implemented by: Thomas Arildsen
 %   Contact e−mail: sparsig−toolbox@es.aau.dk
@@ -28,7 +34,7 @@ function test_noise_ord_vs_scale(quantRate)
 %% Revision control data - remove segment if you are not using SVN
 stStr = evalc('system(sprintf(''svn st %s.m'',mfilename))');
 svnMod = regexp(stStr,'^M','match');
-revStr = '$Revision: 683 $';
+revStr = '$Revision: 685 $';
 svnRevision = regexp(revStr,'-?\d+','match');
 svnStatus = [cell2mat(svnRevision) cell2mat(svnMod)];
 clear stStr svnMod revStr svnRevision;
