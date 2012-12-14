@@ -4,6 +4,26 @@ function test_lloydmax_ord_vs_scale(quantRate)
 % compressed sensing reconstruction from (Lloyd-Max) quantized measurements
 % to incorporate a linear gain-plus-additive-noise quantizer model in the
 % reconstruction.
+%
+%   Code implemented by: Thomas Arildsen
+%   Contact e−mail: sparsig−toolbox@es.aau.dk
+%
+%   Version history:
+%     1.0   [14−DEC−2012] Paper review version.
+
+%   Copyright 2012 Thomas Arildsen, Aalborg University, Denmark
+% 
+%   Licensed under the Apache License, Version 2.0 (the "License");
+%   you may not use this file except in compliance with the License.
+%   You may obtain a copy of the License at
+% 
+%       http://www.apache.org/licenses/LICENSE-2.0
+% 
+%   Unless required by applicable law or agreed to in writing, software
+%   distributed under the License is distributed on an "AS IS" BASIS,
+%   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%   See the License for the specific language governing permissions and
+%   limitations under the License.
 
 %% Revision control data - remove segment if you are not using SVN
 stStr = evalc('system(sprintf(''svn st %s.m'',mfilename))');
