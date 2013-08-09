@@ -10,9 +10,10 @@ large-scale sparse reconstruction" [2], available here:
 http://www.cs.ubc.ca/labs/scl/spgl1
 
 The function bpdq_gauss_unif.m is kindly provided by Prof. Laurent
-Jacques at UC Louvain, Belgium. Please do not re-distribute this
-function without explicit consent from Prof. Laurent Jacques
-(laurent.jacques@uclouvain.be).
+Jacques at UC Louvain, Belgium and is not covered by the Apache
+license governing the rest of the material in this repository. Please
+do not re-distribute this function without explicit consent from
+Prof. Laurent Jacques (laurent.jacques@uclouvain.be).
 
 ========================================================================
 [1] Donoho, D. & Tanner, J., "Precise Undersampling Theorems",
@@ -21,3 +22,18 @@ Proceedings of the IEEE, 2010, vol. 98, no. 6, pp. 913-924.
 [2] E. van den Berg and M. P. Friedlander, "Probing the Pareto
 frontier for basis pursuit solutions", SIAM Journal on Scientific
 Computing, 2008, vol. 31, no. 2, pp. 890-912.
+
+========================================================================
+Copyright 2012 Thomas Arildsen, Aalborg University, Denmark
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

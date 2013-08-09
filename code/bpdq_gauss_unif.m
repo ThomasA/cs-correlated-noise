@@ -15,9 +15,14 @@ function [thr, lev, std_bin, opt_err] = bpdq_gauss_unif(nbin)
 %  * thr: nbbin + 1 threshold between -Inf and Inf
 %  * lev: the centroid of each bin 
 %
-% This function is kindly provided by Prof. Laurent Jacques at UC Louvain,
-% Belgium. Please do not re-distribute this function without explicit
-% consent from Prof. Laurent Jacques (laurent.jacques@uclouvain.be).
+% This function is kindly provided by Prof. Laurent Jacques at UC
+% Louvain, Belgium. Please do not re-distribute this function without
+% explicit consent from Prof. Laurent Jacques
+% (laurent.jacques@uclouvain.be).
+%
+% This function is NOT covered by the Apache license governing the
+% rest of the material in this repository.
+
 
 %% Important functions
 G = @(x) (2*pi)^(-.5) * exp(- x.^2/2);
