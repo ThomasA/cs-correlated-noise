@@ -31,14 +31,6 @@ function saveFileName = test_uniform_ord_vs_scale(quantRate)
 %   See the License for the specific language governing permissions and
 %   limitations under the License.
 
-%% Revision control data - remove segment if you are not using SVN
-stStr = evalc('system(sprintf(''svn st %s.m'',mfilename))');
-svnMod = regexp(stStr,'^M','match');
-revStr = '$Revision: 685 $';
-svnRevision = regexp(revStr,'-?\d+','match');
-svnStatus = [cell2mat(svnRevision) cell2mat(svnMod)];
-clear stStr svnMod revStr svnRevision;
-
 %% Practical details
 tempFileName = [strrep(mfilename,'test','tempdata') sprintf('_r%d',quantRate) '.mat'];
 saveFileName = [strrep(mfilename,'test','results') sprintf('_r%d',quantRate) '_' datestr(now,30) '.mat'];
@@ -130,8 +122,6 @@ for ii = M_LOOP_STARTVAL:length(M)
       yOrig = mMeas*x;
       %% Quantize the signal
       yvar = var(yOrig);
-      % Known K
-      %[~, yQuant] = quantiz(yOrig,sqrt(K(ii)/M(ii))*part,sqrt(K(ii)/M(ii))*cb);
       % Known variance of y
       [~, yQuant] = quantiz(yOrig,sqrt(yvar)*part,sqrt(yvar)*cb);
       yQuant = yQuant';
@@ -162,17 +152,17 @@ for ii = M_LOOP_STARTVAL:length(M)
     end
     REPREP_LOOP_STARTVAL = 1; % REPREP_LOOP_STARTVAL is only (possibly) > 1 for the first iteration ii after a restart
   end
-  % 95% Confidence intervals estimated by assuming the mean of the sample
+  % 99% Confidence intervals estimated by assuming the mean of the sample
   % to be normal distributed and then estimating the confidence intervals
   % according to [2], Section 7.3.1.
   for l = 1:length(factorsEpsilon)
     NMSE1_avg(l,1,ii) = mean(NMSE1(l,1,:,ii));
-    NMSE1_avgci(l,1,ii,:) = mean(NMSE1(l,1,:,ii)) + [-1 1]'*tinv(1-.025,size(NMSE1,3)-1)*std(NMSE1(l,1,:,ii))/sqrt(size(NMSE1,3));
+    NMSE1_avgci(l,1,ii,:) = mean(NMSE1(l,1,:,ii)) + [-1 1]'*tinv(1-.005,size(NMSE1,3)-1)*std(NMSE1(l,1,:,ii))/sqrt(size(NMSE1,3));
     for m = 1:length(factorsAlpha)
       NMSE2_avg(l,m,ii) = mean(NMSE2(l,m,:,ii));
-      NMSE2_avgci(l,m,ii,:) = mean(NMSE2(l,m,:,ii)) + [-1 1]'*tinv(1-.025,size(NMSE2,3)-1)*std(NMSE2(l,m,:,ii))/sqrt(size(NMSE2,3));
+      NMSE2_avgci(l,m,ii,:) = mean(NMSE2(l,m,:,ii)) + [-1 1]'*tinv(1-.005,size(NMSE2,3)-1)*std(NMSE2(l,m,:,ii))/sqrt(size(NMSE2,3));
       NMSE3_avg(l,m,ii) = mean(NMSE3(l,m,:,ii));
-      NMSE3_avgci(l,m,ii,:) = mean(NMSE3(l,m,:,ii)) + [-1 1]'*tinv(1-.025,size(NMSE3,3)-1)*std(NMSE3(l,m,:,ii))/sqrt(size(NMSE3,3));
+      NMSE3_avgci(l,m,ii,:) = mean(NMSE3(l,m,:,ii)) + [-1 1]'*tinv(1-.005,size(NMSE3,3)-1)*std(NMSE3(l,m,:,ii))/sqrt(size(NMSE3,3));
     end
   end
 end
