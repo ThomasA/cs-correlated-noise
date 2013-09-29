@@ -1,7 +1,7 @@
 function plot_ord_vs_scale( filename )
 %PLOT_ORD_VS_SCALE plots simulation test results.
 % This function plots results of the papers comparisons between the
-% proposed methods (12) and (16).
+% proposed methods (10) and (14) and (6).
 %
 % Input:
 %   filename  Result file to load
