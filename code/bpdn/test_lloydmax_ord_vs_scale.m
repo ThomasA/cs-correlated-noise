@@ -144,9 +144,9 @@ for ii = M_LOOP_STARTVAL:length(M)
       % This calculates the variances of the error in the estimates
       % xOrd/xProp w.r.t. x and normalizes the error variances by the
       % variance of x:
-      NMSE1(:,1,k,ii) = var(bsxfun(@minus,x,xOrd),0,1)/var(x)'; 
-      NMSE2(:,:,k,ii) = var(bsxfun(@minus,x,xProp1),0,1)/var(x)';
-      NMSE3(:,:,k,ii) = var(bsxfun(@minus,x,xProp2),0,1)/var(x)';
+      NMSE1(:,1,k,ii) = sum(bsxfun(@minus,x,xOrd).^2,1)/sum(x.^2,1); 
+      NMSE2(:,:,k,ii) = sum(bsxfun(@minus,x,xProp1).^2,1)/sum(x.^2,1);
+      NMSE3(:,:,k,ii) = sum(bsxfun(@minus,x,xProp2).^2,1)/sum(x.^2,1);
       solDiff(:,:,k,ii) = solDiffTmp;
     end
     REPREP_LOOP_STARTVAL = 1; % REPREP_LOOP_STARTVAL is only (possibly) > 1 for the first iteration ii after a restart

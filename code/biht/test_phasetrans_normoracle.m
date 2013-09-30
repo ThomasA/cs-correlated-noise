@@ -117,7 +117,7 @@ for ii = K_LOOP_STARTVAL:length(K)
       % This calculates the variances of the error in the estimates
       % xOrd/xProp w.r.t. x and normalizes the error variances by the
       % variance of x:
-      NMSE(ii,k) = var(xEst-x,1)/var(x); 
+      NMSE(ii,k) = sum((xEst-x).^2,1)/sum(x.^2); 
     end
     REPREP_LOOP_STARTVAL = 1; % REPREP_LOOP_STARTVAL is only (possibly) > 1 for the first iteration ii after a restart
   end

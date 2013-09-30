@@ -129,7 +129,7 @@ function nmseVal = simCoreOrd(factor)
       % This calculates the variances of the error in the estimates
       % xOrd/xProp w.r.t. x and normalizes the error variances by the
       % variance of x:
-      nmseValTmp(k) = var(xOrd-x)/var(x); 
+      nmseValTmp(k) = sum((xOrd-x).^2)/sum(x.^2); 
     end
   end
   nmseVal = mean(nmseValTmp);
@@ -171,7 +171,7 @@ function nmseVal = simCoreScale(factors)
       % This calculates the variances of the error in the estimates
       % xOrd/xProp w.r.t. x and normalizes the error variances by the
       % variance of x:
-      nmseValTmp(k) = var(xProp-x)/var(x);
+      nmseValTmp(k) = sum((xProp-x).^2)/sum(x.^2);
     end
   end
   nmseVal = mean(nmseValTmp);
