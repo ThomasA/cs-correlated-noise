@@ -1,7 +1,7 @@
 #!/bin/sh
 ###
 ### Job name
-#SBATCH --job-name=THA_biht_phasetrans
+#SBATCH --job-name=THA_bpdn_noise_opt_q5
 ### Time limit of total run time of the job
 #SBATCH --time=500:00:00
 ### Number of nodes required for the job
@@ -13,9 +13,9 @@
 ### Amount of memory per core
 #SBATCH --mem=24000
 ### Output
-##SBATCH -o job_bpdn_phasetrans_out.%J
-##SBATCH -e job_bpdn_phasetrans_err.%J
+#SBATCH -o THA_bpdn_noise_opt_q5_out.%J
+#SBATCH -e THA_bpdn_noise_opt_q5_err.%J
 
 ### The actual job execution export
-cd ~/public-repos/corr-cs-code-repo/code/biht/
-/pack/matlab/bin/matlab -nodisplay -r "addpath('~/public-repos/corr-cs-code-repo/code/');matlabpool open local 8;test_phasetrans_normoracle(1000,$1,.01)"
+cd ~/public-repos/corr-cs-code-repo/code/bpdn/
+/pack/matlab/bin/matlab -nodisplay -r "addpath('~/matlab_toolboxes/spgl1-1.8/','~/public-repos/corr-cs-code-repo/code/');matlabpool open local 8;test_noise_ord_vs_scale_opt(5)"
