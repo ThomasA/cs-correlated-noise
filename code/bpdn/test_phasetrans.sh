@@ -33,5 +33,5 @@
 ### The actual job execution export - please note that you will need
 ### to edit the below paths in order to execute the script on your
 ### system
-cd /user/tha/matlab/quant_corr_idea/bpdn/1bit_phase_trans
-/pack/matlab/bin/matlab -nodisplay -r "addpath('~/matlab_toolboxes/spgl1-1.8/','~/matlab/quantization/','~/matlab/donoho_tanner_polytopes/');matlabpool open local 8;test_phasetrans(1000,$1,.01)"
+cd ~/public-repos/corr-cs-code-repo/code/bpdn/
+/pack/matlab/bin/matlab -nodisplay -r "addpath('~/matlab_toolboxes/spgl1-1.8/','~/public-repos/corr-cs-code-repo/code/');matlabpool open local 8;test_phasetrans(1000,$1,.01)"
