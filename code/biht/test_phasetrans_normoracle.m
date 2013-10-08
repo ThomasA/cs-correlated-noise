@@ -100,7 +100,9 @@ for ii = K_LOOP_STARTVAL:length(K)
       x = zeros(N,1);
       x(1:K(ii)) = randn(stream,K(ii),1);
       x = x(randperm(stream,N));
-      x = x/norm(x); % Unit-norm x
+      if norm(x) > 0
+        x = x/norm(x); % Unit-norm x
+      end
       %% Sampling Settings
       mMeas = (1/sqrt(M))*randn(stream,M,N);
       %% Sample the signal
