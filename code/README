@@ -9,11 +9,8 @@ The main simulation scripts require the toolbox "SPGL1: A solver for
 large-scale sparse reconstruction" [2], available here:
 http://www.cs.ubc.ca/labs/scl/spgl1
 
-The function bpdq_gauss_unif.m is kindly provided by Prof. Laurent
-Jacques at UC Louvain, Belgium and is not covered by the Apache
-license governing the rest of the material in this repository. Please
-do not re-distribute this function without explicit consent from
-Prof. Laurent Jacques (laurent.jacques@uclouvain.be).
+The function bpdq_gauss_unif.m is freely provided by Laurent
+Jacques (UCLouvain, Belgium).
 
 ========================================================================
 [1] Donoho, D. & Tanner, J., "Precise Undersampling Theorems",
